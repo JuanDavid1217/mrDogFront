@@ -1,0 +1,56 @@
+<div id="content">
+    <div class="list">
+        <div class="product" *ngFor="let product of productList">
+            <div class="image">
+                <img src='../../assets/images/img{{product.id_producto}}.jpeg'>
+            </div>
+            <div class="general">
+                <span class="name">{{product.nombre}}</span>
+                <br>
+                <br>
+                <div class="general-segment">
+                    <div class="cost">
+                        ${{product.precio_venta}}
+                    </div>
+                    <div class="discount">
+                        {{ product.descuento == 0 ? 'Sin descuento.' : 'Con descuento: ' + product.descuento + '%' }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="filter">
+        <div class="filter-container">
+            <div class="search">
+                <div>
+                    <input #enter type="text"
+                                  placeholder="Buscar..."
+                                  (input)="autocomplite()"
+                                  (keydown)="enterPressed($event, enter)"
+                                  [(ngModel)]="input"
+                                  [ngModelOptions]="{standalone: true}">
+                    <div class="itemList" *ngIf="searchList.length>0">
+                        <div class="item" *ngFor="let name of searchList"
+                                          (click)="onClickItem(name)">
+                            {{name.nombre}}
+                        </div>
+                    </div>
+                </div>
+                <button (click)="buscar()">search</button>
+            </div>
+            <div class="filter-options">
+                <div>
+                    Filtrar por:
+                    <br>
+                    <br>
+                    <div class="filter-options-container">
+                        <div class="options" *ngFor="let option of categorias">
+                            <input id="{{option.id_categoria}}"  class="check" type="checkbox" (click)="filter(option.id_categoria)">
+                            <label for="{{option.id_categoria}}" class="option">{{option.categoria}}</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

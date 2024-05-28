@@ -1,0 +1,36 @@
+#content{
+    display: flex;
+    background-color: #F5F1F1;
+}
+
+.schedules{
+    width: 65%;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    overflow: auto;
+}
+
+p{
+    height: auto;
+}
+
+.days{
+    font-size: xx-large;
+}
+
+.hours{
+    font-size: x-large;
+}
+
+.image{
+    width: 35%;
+    height: auto;
+    overflow: hidden;
+}
+
+img{
+    width: 100%;
+    height: auto;
+}

@@ -1,0 +1,90 @@
+#menu-bar, #footer{
+    width: 100%;
+    height: 15%;
+    background-color: #1C677C;
+    display: flex;
+    align-items: center;
+    color:white;
+}
+
+#footer{
+    text-align: center;
+    justify-content: center;
+}
+
+.ubication{
+    width: auto;
+    height: auto;
+}
+
+.logoSection{
+    height: 100%;
+    align-items: center;
+    display: flex;
+    padding-left: 5%;
+}
+
+.serviceSection{
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.serviceSection:hover{
+    background-color: #155162 !important;
+}
+
+.hoursSection{
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.hoursSection:hover{
+    background-color: #155162 !important;;
+}
+
+.perfilSection{
+    height: 100%;
+    align-items: center;
+    justify-content: right;
+    display: flex;
+    padding-right: 5%;
+}
+
+#body{
+    width: 100%;
+    height: 70%;
+}
+
+.logo-img, .perfil-img{
+    width: 25%;
+    height: auto;
+    object-fit: contain;
+}
+
+.perfil-img{
+    width: 15%;
+}
+
+.list{
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 10;
+}
+
+.list:hover{
+    background-color: rgba(0, 0, 0, 0.8) !important;
+}
+
+.protector{
+    position: absolute;
+    width: 100%;
+    height: 70%;
+    background-color: rgba(0, 0, 0, 0.3);
+}

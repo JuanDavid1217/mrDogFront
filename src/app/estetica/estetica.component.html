@@ -1,0 +1,57 @@
+<div class="content">
+    <div class="image" [style]="{'display': image==1?'block':'none'}">
+        <img src="../../assets/images/mrdog2.jpg">
+    </div>
+    <div class="response" [style]="{'display': response==1?'block':'none'}">
+        <div id="aligned">
+            <div class="response-content">
+                <div>
+                    <span class="nombre">{{nombre}}.</span>
+                </div>
+                <br>
+                <div>
+                    <b>Descripción:</b>
+                </div>
+                <div>
+                    {{descripcion}}, para mascota de tamaño: {{talla}}.
+                </div>
+                <br>
+                <div>
+                    <b>Total: </b>${{precio_base+(precio_base*aumento_precio/100)}}
+                </div>
+                <br><br>
+                <div class="container-button">
+                    <button (click)="ok()">Aceptar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="price">
+        <div class="price-content">
+            <p><span class="title">Cotiza el baño para tu mascota:</span></p>
+            <br><br>
+            <div class="price-options">
+                <div class="labels">
+                    <div class="option">Tamaño:</div>
+                    <br><br>
+                    <div class="option">Paquete:</div>
+                </div>
+                <div class="selects">
+                    <div>
+                        <select [(ngModel)]="optionSize" default="optionSize" (change)="changeSize()">
+                            <option *ngFor="let tamano of tamanos; index as i" value="{{i}}">{{tamano.talla}}</option>
+                        </select>
+                    </div>
+                    <br>
+                    <div>
+                        <select [(ngModel)]="optionPaquete" default="optionPaquete" (change)="changePaquete()">
+                            <option *ngFor="let paquete of paquetes; index as j" value="{{j}}">{{paquete.nombre}}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <br><br>
+            <button (click)="cotizar()">Cotizar</button>
+        </div>
+    </div>
+</div>
